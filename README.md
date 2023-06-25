@@ -190,7 +190,7 @@ $ yarn typeorm migration:run
 
 <br />
 
-## [React Berry Dashboar](https://appseed.us/product/berry-dashboard-pro/full-stack/) `PRO Version`
+## [React Berry Dashboard](https://appseed.us/product/berry-dashboard-pro/full-stack/) `PRO Version`
 
 > For more components, pages and priority on support, feel free to take a look at this amazing starter:
 
