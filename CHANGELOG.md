@@ -1,5 +1,12 @@
 # Change Log
 
+## [v1.0.4] 2023-06-25
+### Changes
+
+- STABLE Version
+- Regenerate Codebase
+  - [React App Generator](https://appseed.us/generator/react/) - free tool 
+
 ## [v1.0.3] 2022-11-13
 ### Improvements
 
