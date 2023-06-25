@@ -14,7 +14,7 @@ The **React** Design is crafted by [CodedThemes](https://codedthemes.com/?ref=ap
 ## ✨ `React` Berry Dashboard
 
 - `M-UI` based design
-- Modern aesthetics UI design - Designed by *[CodedThemes](https://bit.ly/37fF9RT)*
+- Modern aesthetics UI design - Designed by *[CodedThemes](https://codedthemes.com/?ref=appseed)*
 - React, Redux, Redux-persist
 
 <br />
