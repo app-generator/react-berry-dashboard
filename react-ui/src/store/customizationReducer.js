@@ -9,7 +9,7 @@ export const initialState = {
     fontFamily: config.fontFamily,
     borderRadius: config.borderRadius,
     opened: true,
-    direction: config.direction
+    direction: config.direction.toLocaleLowerCase()
 };
 
 //-----------------------|| CUSTOMIZATION REDUCER ||-----------------------//
