@@ -22,62 +22,71 @@ import { SET_MENU } from './../../store/actions';
 import { IconChevronRight } from '@tabler/icons';
 
 // style constant
-const useStyles = makeStyles((theme) => ({
-    root: {
-        display: 'flex'
-    },
-    appBar: {
-        backgroundColor: theme.palette.background.default
-    },
-    appBarWidth: {
-        transition: theme.transitions.create('width'),
-        backgroundColor: theme.palette.background.default
-    },
-    content: {
-        ...theme.typography.mainContent,
-        borderBottomLeftRadius: 0,
-        borderBottomRightRadius: 0,
-        transition: theme.transitions.create('margin', {
-            easing: theme.transitions.easing.sharp,
-            duration: theme.transitions.duration.leavingScreen
-        }),
-        [theme.breakpoints.up('md')]: {
-            marginLeft: -(drawerWidth - 20),
-            width: `calc(100% - ${drawerWidth}px)`
+const useStyles = (dir) =>
+    makeStyles((theme) => ({
+        root: {
+            display: 'flex',
+            right: dir ? 0 : ''
         },
-        [theme.breakpoints.down('md')]: {
-            marginLeft: '20px',
-            width: `calc(100% - ${drawerWidth}px)`,
-            padding: '16px'
+        appBar: {
+            backgroundColor: theme.palette.background.default
         },
-        [theme.breakpoints.down('sm')]: {
-            marginLeft: '10px',
-            width: `calc(100% - ${drawerWidth}px)`,
-            padding: '16px',
-            marginRight: '10px'
+        appBarWidth: {
+            transition: theme.transitions.create('width'),
+            backgroundColor: theme.palette.background.default
+        },
+        content: {
+            ...theme.typography.mainContent,
+            borderBottomLeftRadius: 0,
+            borderBottomRightRadius: 0,
+            transition: theme.transitions.create('margin', {
+                easing: theme.transitions.easing.sharp,
+                duration: theme.transitions.duration.leavingScreen
+            }),
+            [theme.breakpoints.up('md')]: {
+                marginLeft: dir ? -(drawerWidth - 20) : '',
+                marginRight: !dir ? -(drawerWidth - 20) : '',
+                width: `calc(100% - ${drawerWidth}px)`
+            },
+            [theme.breakpoints.down('md')]: {
+                marginLeft: dir ? '20px' : '',
+                marginRight: !dir ? '20px' : '',
+                width: `calc(100% - ${drawerWidth}px)`,
+                padding: '16px'
+            },
+            [theme.breakpoints.down('sm')]: {
+                marginLeft: '10px',
+                width: `calc(100% - ${drawerWidth}px)`,
+                padding: '16px',
+                marginRight: '10px'
+            }
+        },
+        contentShift: {
+            transition: theme.transitions.create('margin', {
+                easing: theme.transitions.easing.easeOut,
+                duration: theme.transitions.duration.enteringScreen
+            }),
+            marginLeft: dir ? '0' : '',
+            marginRight: !dir ? '0' : '',
+            borderBottomLeftRadius: 0,
+            borderBottomRightRadius: 0,
+            [theme.breakpoints.down('md')]: {
+                marginLeft: dir ? '20px' : '',
+                marginRight: !dir ? '20px' : ''
+            },
+            [theme.breakpoints.down('sm')]: {
+                marginLeft: dir ? '10px' : '',
+                marginRight: !dir ? '10px' : ''
+            }
         }
-    },
-    contentShift: {
-        transition: theme.transitions.create('margin', {
-            easing: theme.transitions.easing.easeOut,
-            duration: theme.transitions.duration.enteringScreen
-        }),
-        marginLeft: 0,
-        borderBottomLeftRadius: 0,
-        borderBottomRightRadius: 0,
-        [theme.breakpoints.down('md')]: {
-            marginLeft: '20px'
-        },
-        [theme.breakpoints.down('sm')]: {
-            marginLeft: '10px'
-        }
-    }
-}));
+    }));
 
 //-----------------------|| MAIN LAYOUT ||-----------------------//
 
 const MainLayout = ({ children }) => {
-    const classes = useStyles();
+    const { direction } = useSelector((state) => state.customization);
+    // prop direction to handle the margin of main header 
+    const classes = useStyles(direction === 'ltr')();
     const theme = useTheme();
     const matchDownMd = useMediaQuery(theme.breakpoints.down('md'));
 

@@ -8,7 +8,8 @@ export const initialState = {
     isOpen: [], //for active default menu
     fontFamily: config.fontFamily,
     borderRadius: config.borderRadius,
-    opened: true
+    opened: true,
+    direction: config.direction
 };
 
 //-----------------------|| CUSTOMIZATION REDUCER ||-----------------------//
@@ -35,6 +36,11 @@ const customizationReducer = (state = initialState, action) => {
             return {
                 ...state,
                 borderRadius: action.borderRadius
+            };
+        case actionTypes.RTL_DESIGN:
+            return {
+                ...state,
+                direction: action.direction
             };
         default:
             return state;
