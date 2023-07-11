@@ -12,7 +12,7 @@ import { themeTypography } from './typography';
  * Represent theme style and structure as per Material-UI
  * @param {JsonObject} customization customization parameter object
  */
-export function theme(customization) {
+export function theme(customization, direction) {
     const color = colors;
 
     let themeOption = {
@@ -31,7 +31,7 @@ export function theme(customization) {
     };
 
     return createTheme({
-        direction: 'ltr',
+        direction: direction,
         palette: themePalette(themeOption),
         mixins: {
             toolbar: {

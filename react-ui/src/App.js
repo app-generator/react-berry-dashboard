@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
 import { ThemeProvider } from '@material-ui/core/styles';
@@ -17,10 +17,14 @@ import NavigationScroll from './layout/NavigationScroll';
 
 const App = () => {
     const customization = useSelector((state) => state.customization);
+    useEffect(() => {
+        document.body.setAttribute('dir', customization.direction);
+        document.documentElement.setAttribute('dir', customization.direction);
+    }, [customization.direction]);
 
     return (
         <StyledEngineProvider injectFirst>
-            <ThemeProvider theme={theme(customization)}>
+            <ThemeProvider theme={theme(customization, customization.direction)}>
                 <CssBaseline />
                 <NavigationScroll>
                     <Routes />

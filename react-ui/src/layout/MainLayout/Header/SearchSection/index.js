@@ -17,7 +17,7 @@ import { IconAdjustmentsHorizontal, IconSearch, IconX } from '@tabler/icons';
 const useStyles = makeStyles((theme) => ({
     searchControl: {
         width: '434px',
-        marginLeft: '16px',
+        margin: '0 16px',
         paddingRight: '16px',
         paddingLeft: '16px',
         '& input': {

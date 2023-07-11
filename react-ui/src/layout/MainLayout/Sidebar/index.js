@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
         background: theme.palette.background.default,
         color: theme.palette.text.primary,
         borderRight: 'none',
+        right: 0,
         [theme.breakpoints.up('md')]: {
             top: '88px'
         }

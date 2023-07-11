@@ -35,6 +35,9 @@ import { IconBell } from '@tabler/icons';
 
 // style constant
 const useStyles = makeStyles((theme) => ({
+    root: {
+        direction: 'ltr'
+    },
     ScrollHeight: {
         height: '100%',
         maxHeight: 'calc(100vh - 205px)',
@@ -156,6 +159,7 @@ const NotificationSection = () => {
                 </ButtonBase>
             </Box>
             <Popper
+                className={classes.root}
                 placement={matchesXs ? 'bottom' : 'bottom-end'}
                 open={open}
                 anchorEl={anchorRef.current}
