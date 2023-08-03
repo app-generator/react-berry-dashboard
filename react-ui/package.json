@@ -1,8 +1,6 @@
 {
     "name": "react-berry-admin-template",
     "version": "0.0.4",
-    "private": true,
-    "homepage": "https://berrydashboard.io",
     "build": {
         "yarn": "v14.0.0,v16.0.0",
         "npm": "v14.0.0,v16.0.0"
