@@ -190,6 +190,19 @@ $ yarn typeorm migration:run
 
 <br />
 
+## 👉 UI RTL support
+
+> Change diretion in react-ui/src/config.js:
+
+```
+const config = {
+    ...,
+    direction: 'ltr' // change to 'rtl'
+};
+```
+
+<br />
+
 ## [React Berry Dashboard](https://appseed.us/product/berry-dashboard-pro/full-stack/) `PRO Version`
 
 > For more components, pages and priority on support, feel free to take a look at this amazing starter:

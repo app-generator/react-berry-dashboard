@@ -25,6 +25,10 @@ const useStyles = makeStyles((theme) => ({
         color: '#fff',
         overflow: 'hidden',
         position: 'relative',
+        '&>div': {
+            position: 'relative',
+            zIndex: 5
+        },
         '&:after': {
             content: '""',
             position: 'absolute',
@@ -32,6 +36,7 @@ const useStyles = makeStyles((theme) => ({
             height: '210px',
             background: theme.palette.secondary[800],
             borderRadius: '50%',
+            zIndex: 1,
             top: '-85px',
             right: '-95px',
             [theme.breakpoints.down('xs')]: {
